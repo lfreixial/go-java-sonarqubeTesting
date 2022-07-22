@@ -1,19 +1,26 @@
 package test;
 
 import main.calculator;
-import org.junit.jupiter.api.BeforeEach;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+
+import java.security.InvalidParameterException;
+
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+
 
 public class calculatorTest {
-    calculator calculator;
+    calculator calculator = new calculator();
 
-    @BeforeEach
-    void setUp(){
-        calculator = new calculator();
-    }
 
     @Test
-    void testMultiply(){
-        assertEquals(20, calculator.multiply(4,5), "Regular multiplication should work");
+    public void testMultiply(){
+        assertEquals("Testing",20 ,calculator.multiply(4, 5), 0.000000001d);
     }
 
 }
