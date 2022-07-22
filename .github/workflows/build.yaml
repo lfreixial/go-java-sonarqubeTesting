@@ -30,7 +30,7 @@ on:
 
 jobs:
   build:
-    name: Build_Java
+    name: Build
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -57,13 +57,13 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
-        run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=lfreixial_go-java-sonarqubeTesting_AYIldx_MVi8lXLUNzIv9
+        run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=lfreixial_go-java-sonarqubeTesting_AYIlsqHeVi8lXLUNzIwq
     # name: Build_Go
     # runs-on: ubuntu-latest
     # steps:
     #   - uses: actions/checkout@v2
     #     with:
-    #       #fetch-depth: 0
+    #       fetch-depth: 0
     #   - uses: sonarsource/sonarqube-scan-action@master
     #     env:
     #       SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
